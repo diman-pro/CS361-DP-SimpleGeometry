@@ -28,15 +28,15 @@ namespace GeometryLib.Shapes
         }
         public override string Print()
         {
+            
+            return $"Triangle: sides: {Side1} {Side2} {Side3}, area = {Area()}";
+        }
+        public override double Area()
+        {
             double area = 0;
-            var triangle = this;
-
-            var side1 = triangle.Side1;
-            var side2 = triangle.Side2;
-            var side3 = triangle.Side3;
-            var p = (side1 + side2 + side3) / 2;
-            area = Math.Sqrt(p * (p - side1) * (p - side2) * (p - side3));
-            return $"Triangle: sides: {side1} {side2} {side3}, area = {area}";
+            var p = (Side1 + Side2 + Side3) / 2;
+            area = Math.Sqrt(p * (p - Side1) * (p - Side2) * (p - Side3));
+            return area;
         }
     }
 }

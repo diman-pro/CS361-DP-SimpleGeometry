@@ -21,10 +21,13 @@ namespace GeometryLib.Shapes
         }
         public override string Print()
         {
+            return $"Circle: radius = {Radius}, area = {Area()}";
+        }
+        public override double Area()
+        {
             double area = 0;
-            var circle = this;
-            area = circle.Radius * circle.Radius * Math.PI;
-            return $"Circle: radius = {circle.Radius}, area = {area}";
+            area = Radius * Radius * Math.PI;
+            return area;
         }
 
     }
